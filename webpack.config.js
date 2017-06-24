@@ -7,8 +7,8 @@ const config = {
     main: './src/entry-client.js',
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[chunkhash].js'
+    path: path.resolve(__dirname, 'extension', 'dist'),
+    filename: '[name].js'
   },
   module: {
     rules: [{

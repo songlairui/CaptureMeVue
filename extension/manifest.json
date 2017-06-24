@@ -1,0 +1,41 @@
+{
+  "name": "CaptureMe Vue",
+  "version": "1.0",
+  "description": "捕捉我的留言行为，将自己的留言收集到自己的数据存储之中 Vue 版",
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_icon": "icon-19.png",
+    "default_title": "Capture Larry",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "activeTab",
+    "storage",
+    "declarativeContent",
+    "https://*/"
+  ],
+  "options_page": "options.html",
+  "icons": {
+    "48": "icon-48.png",
+    "128": "icon-128.png"
+  },
+  "manifest_version": 2,
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "run_at": "document_end",
+      "js": [
+        "lib/av-min.js",
+        "lib/axios.min.js"
+        // "bind.js",
+      ]
+    }
+  ]
+}

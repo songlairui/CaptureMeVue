@@ -1,17 +1,11 @@
 <template>
   <div id="main app">
-    <div class="input">
-      <div class="label">字段1:</div>
-      <div class="raw"></div>
-    </div>
-    <div class="input">
-      <div class="label">字段2:</div>
-      <div class="raw"></div>
-    </div>
-    <div class="input">
-      <div class="label">字段3:</div>
-      <div class="raw"></div>
-    </div>
+    <h1>{{ title  }}</h1>
+    <nav>
+      <router-link :to="{name: 'default'}">Default</router-link>
+      <router-link :to="{name: 'create'}">Create</router-link>
+      <!--<router-link></router-link>-->
+    </nav>
     <hr>
     <router-view></router-view>
   </div>
@@ -27,4 +21,17 @@
   content: ' ';
 }
 </style>
+<script>
+export default {
+  name: 'app',
+  data(){
+    return {
+      title: 'Capture Me - Vue'
+    }
+  },
+  created () {
+    // this.$router.replace('/create')
+  }
+}
+</script>
 

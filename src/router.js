@@ -4,18 +4,19 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 import Default from './Default.vue'
+import Create from './pages/Create.vue'
 
 export function createRouter() {
   return new Router({
-    mode: 'history',
+    // mode: 'history',
     routes: [{
       path: '/',
       component: Default,
       name: 'default'
     }, {
       path: '/create',
-      component: Default,
-      name: 'default'
+      component: Create,
+      name: 'create'
     }]
   })
 
