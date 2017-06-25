@@ -1,6 +1,6 @@
 <template>
   <div id="main app">
-    <h1>{{ title  }}</h1>
+    <!--<h1>{{ title  }}</h1>-->
     <nav>
       <router-link :to="{name: 'default'}">Default</router-link>
       <router-link :to="{name: 'create'}">Create</router-link>

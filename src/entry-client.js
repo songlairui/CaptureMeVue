@@ -1,3 +1,5 @@
+import * as AV from 'leancloud-storage'
+import * as axios from 'axios'
 AV.init({
   appId: 'M1fK91XAoxq90usCoaGH3sHc-gzGzoHsz',
   appKey: 'bUaNHdspEmvdTxTN2RotdlLu'

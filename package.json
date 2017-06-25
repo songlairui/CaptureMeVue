@@ -6,6 +6,7 @@
     "doc": "doc"
   },
   "scripts": {
+    "build:tmp": "webpack --config webpack.tmp.config.js --progress",
     "build:client": "webpack --config webpack.config.js --progress",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,7 +14,10 @@
   "author": "songlairui",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.16.2",
     "express": "^4.15.3",
+    "gulp": "^3.9.1",
+    "leancloud-storage": "^3.0.1",
     "vue": "^2.3.4",
     "vue-loader": "^12.2.1",
     "vue-router": "^2.6.0",
