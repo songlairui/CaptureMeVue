@@ -1,6 +1,9 @@
 <template>
   <main id="create">
-    <h1>Create</h1>
+    <header>
+      <h1>Create</h1>
+      <div class="dots"></div>
+    </header>
     <div class="input-group">
       <label for="title">Title:</label>
       <input type="text" name='title' v-model="pool.title">
@@ -11,8 +14,7 @@
       <input type="text" name='identity' v-model="pool.identity">
     </div>
     <div class="result">
-      {{ pool.title }} {{ pool.identity }} 
-      {{ alert.tip }}
+      {{ pool.title }} {{ pool.identity }} {{ alert.tip }}
     </div>
     <div class="btns">
       <a @click='create' class="btn">Create</a>
@@ -59,10 +61,21 @@ export default {
 </script>
 
 <style>
-.result{
+header{
+  background: linear-gradient(90deg,#F359AE,#EF96F9);
+  border-radius: .3em .3em 0 0 ;
+}
+header{
+  color: white;
+}
+header h1{
+  font-size: 1rem;
+}
+.result {
   white-space: pre-wrap;
 }
-.btn{
+
+.btn {
   border: thin solid green;
   color: green;
   background: yellow;

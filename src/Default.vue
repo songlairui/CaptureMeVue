@@ -1,19 +1,14 @@
 <template>
   <div id="default">
-    <h1>Default Readme</h1>
-    <p>Info Page</p>
-  
-    <div class="input">
-      <div class="label">字段1:</div>
-      <div class="raw"></div>
-    </div>
-    <div class="input">
-      <div class="label">字段2:</div>
-      <div class="raw"></div>
-    </div>
-    <div class="input">
-      <div class="label">字段3:</div>
-      <div class="raw"></div>
-    </div>
+    <h2>Learning React</h2>
+    <h3>By @devinaabbott</h3>
+    <p>React is a library for building performant interfaces for the web and other platforms.</p>
+    <p>You should use this guide as a companion to the official Facebook documentation for getting started.</p>
+    <footer> Inspire with react.express </footer>
   </div>
 </template>
+<style>
+footer {
+  color: #999;
+}
+</style>

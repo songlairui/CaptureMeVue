@@ -10,8 +10,16 @@ gulp.task('cpfile', function() {
   })
   // 打包文件到 ／tmp 文件夹
 gulp.task('webpack', function() {
-  webpack(config, function(err, stats) {
-      console.info(err)
-    })
-    // gulp.watch(['*.html', 'styles/**/*.css', 'scripts/**/*.js'], )
+  gulp.watch(['src/**/*.vue', 'src/*.vue', 'scripts/**/*.js'],
+    function() {
+      console.info(`Start : ${new Date().toLocaleString()}`)
+      webpack(config, function(err, stats) {
+        if (err) {
+          console.error(err)
+        } else {
+          console.info(`Ended : ${new Date(stats.endTime).toLocaleString()}`)
+        }
+      })
+    }
+  )
 })
