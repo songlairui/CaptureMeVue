@@ -4,12 +4,12 @@
       <h1>Create</h1>
       <div class="dots"></div>
     </header>
-    <div class="input-group">
+    <div class="input-group" :class="{blank:!pool.title.length}">
       <label for="title">Title:</label>
       <input type="text" name='title' v-model="pool.title">
     </div>
   
-    <div class="input-group">
+    <div class="input-group" :class="{blank:!pool.identity.length}">
       <label for="identity">Identity:</label>
       <input type="text" name='identity' v-model="pool.identity">
     </div>
@@ -80,5 +80,8 @@ header h1{
   color: green;
   background: yellow;
   padding: .3em .5em;
+}
+.blank{
+  color: blue;
 }
 </style>

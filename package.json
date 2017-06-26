@@ -16,6 +16,7 @@
   "dependencies": {
     "axios": "^0.16.2",
     "express": "^4.15.3",
+    "extract-text-webpack-plugin": "^2.1.2",
     "gulp": "^3.9.1",
     "leancloud-storage": "^3.0.1",
     "vue": "^2.3.4",
