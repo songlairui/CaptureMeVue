@@ -7,8 +7,12 @@
     <footer> Inspire with react.express </footer>
   </div>
 </template>
-<style>
+<style scoped>
 footer {
   color: #999;
+}
+#default{
+  color: snow;
+  background: #000;
 }
 </style>

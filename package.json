@@ -6,6 +6,7 @@
     "doc": "doc"
   },
   "scripts": {
+    "dev":"webpack-dev-server",
     "build:tmp": "webpack --config webpack.tmp.config.js --progress",
     "build:client": "webpack --config webpack.config.js --progress",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -23,7 +24,8 @@
     "vue-loader": "^12.2.1",
     "vue-router": "^2.6.0",
     "vue-server-renderer": "^2.3.4",
-    "vuex": "^2.3.1"
+    "vuex": "^2.3.1",
+    "webpack-dev-server": "^2.5.0"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",
