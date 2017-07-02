@@ -60,17 +60,22 @@ export default {
 }
 </script>
 
-<style>
-header{
-  background: linear-gradient(90deg,#F359AE,#EF96F9);
-  border-radius: .3em .3em 0 0 ;
+<style scoped>
+header {
+  background: linear-gradient(90deg, #F359AE, #EF96F9);
+  border-radius: .3em .3em 0 0;
 }
-header{
+.input-group{
+  display: flex;
+}
+header {
   color: white;
 }
-header h1{
+
+header h1 {
   font-size: 1rem;
 }
+
 .result {
   white-space: pre-wrap;
 }
@@ -80,8 +85,10 @@ header h1{
   color: green;
   background: yellow;
   padding: .3em .5em;
+  display: flex;
 }
-.blank{
+
+.blank {
   color: blue;
 }
 </style>

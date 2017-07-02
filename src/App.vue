@@ -11,6 +11,7 @@
   </div>
 </template>
 <style>
+
 .raw {
   background: yellow;
   padding: .1em;
@@ -22,14 +23,16 @@
 }
 </style>
 <script>
+// require('./styles/reset.css')
+
 export default {
   name: 'app',
-  data(){
+  data() {
     return {
       title: 'Capture Me - Vue'
     }
   },
-  created () {
+  created() {
     // this.$router.replace('/create')
   }
 }

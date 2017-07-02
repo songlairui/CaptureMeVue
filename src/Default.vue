@@ -16,3 +16,13 @@ footer {
   background: #000;
 }
 </style>
+<script>
+export default {
+  name: 'default',
+  data () {
+    return {
+      msg : 'default page'
+    }
+  }
+}
+</script>

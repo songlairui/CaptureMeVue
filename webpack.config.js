@@ -3,23 +3,31 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const webpack = require('webpack')
 
+const noDev = process.env.NODE_ENV !== 'dev'
 const config = {
   devtool: '#source-map',
+  // devServer: { inline: true },
+  resolve: {
+    alias: {
+      // 'reset.css':'./src/styles/reset.css'
+    }
+  },
   entry: {
     main: './src/main.js',
-    client: './src/entry-client.js',
+    client: ['./src/entry-client.js'],
   },
   output: {
     path: path.resolve(__dirname, 'extension', 'dist'),
     // path: path.resolve('/tmp', 'dist'),
-    filename: '[name].js'
+    filename: '[name].js',
+    publicPath: '/'
   },
   module: {
     rules: [{
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
-          extractCSS: true,
+          extractCSS: noDev,
           preserveWhitespace: false,
           postcss: [
             require('autoprefixer')({
@@ -43,16 +51,17 @@ const config = {
       },
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
+        use: noDev ? ExtractTextPlugin.extract({
           use: 'css-loader?minimize',
           fallback: 'vue-style-loader'
-        })
+        }) : ['vue-style-loader', 'css-loader']
       }
     ]
   },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
-      names: ['vendor', 'manifest'],
+      // names: ['vendor', 'manifest'],
+      names: ['vendor'],
       minChunks: function(module) {
         // a module is extracted into the vendor chunk if...
         return (
@@ -76,8 +85,11 @@ const config = {
       template: './popup.html',
       chunks: ['client'],
       filename: 'popup.html'
-    })
+    }),
+    new webpack.HotModuleReplacementPlugin()
   ]
 }
+console.info(process.env.NODE_ENV)
+console.info(process.env.NODE_ENV !== 'dev')
 
 module.exports = config

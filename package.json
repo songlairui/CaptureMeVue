@@ -6,7 +6,7 @@
     "doc": "doc"
   },
   "scripts": {
-    "dev":"webpack-dev-server",
+    "dev":"webpack-dev-server --public ",
     "build:tmp": "webpack --config webpack.tmp.config.js --progress",
     "build:client": "webpack --config webpack.config.js --progress",
     "test": "echo \"Error: no test specified\" && exit 1"
